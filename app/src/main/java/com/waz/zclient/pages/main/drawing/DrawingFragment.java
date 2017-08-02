@@ -32,20 +32,11 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
+import android.view.*;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
-import com.waz.api.BitmapCallback;
-import com.waz.api.ImageAsset;
-import com.waz.api.ImageAssetFactory;
-import com.waz.api.LoadHandle;
-import com.waz.api.MemoryImageCache;
+import com.waz.api.*;
 import com.waz.utils.wrappers.URI;
 import com.waz.zclient.BaseActivity;
 import com.waz.zclient.OnBackPressedListener;
@@ -383,7 +374,7 @@ public class DrawingFragment extends BaseFragment<DrawingFragment.Container> imp
             }
 
             @Override
-            public void onBitmapLoadingFailed(BitmapLoadingFailed reason) {
+            public void onBitmapLoadingFailed() {
                 cancelLoadHandle();
             }
         });
